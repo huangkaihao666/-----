@@ -1,0 +1,41 @@
+/* src/assets/styles/compatibility.css */
+
+/* 修复iOS中的1px问题 */
+  .hairline-border {
+    position: relative;
+  }
+  .hairline-border::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 0 solid #e5e5e5;
+  }
+  .hairline-border-bottom::after {
+    border-bottom-width: 1px;
+  }
+  
+  /* 修复iOS中fixed元素在使用vw时的渲染问题 */
+  .ios-fixed-fix {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* 修复某些Android浏览器中overflow:hidden失效问题 */
+  .android-overflow-fix {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* 修复旧版Safari不支持vw单位的问题 - 配合viewport-units-buggyfill使用 */
+  .vw-fallback-container {
+    width: 100%;
+    max-width: 600px; /* 提供一个回退值，适应不支持vw的浏览器 */
+  }

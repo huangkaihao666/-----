@@ -1,0 +1,23 @@
+{
+  "name": "adaptive-mobile-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "viewport-units-buggyfill": "^0.6.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-px-to-viewport-8-plugin": "^1.2.5",
+    "postcss-viewport-units": "^0.1.6",
+    "vite": "^6.2.0"
+  }
+}
